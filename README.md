@@ -4,13 +4,14 @@ A custom SwiftUI modifier to present an Action Sheet on iPhone and a Popover on 
 
 ## iPhone Preview
 
-<img src="https://user-images.githubusercontent.com/11211914/68700576-6c100580-0585-11ea-847b-99f0450311a4.gif" width="250"><img src="https://user-images.githubusercontent.com/11211914/68700574-6c100580-0585-11ea-9727-8a02ec36b118.gif" width="250">
+<img src="https://user-images.githubusercontent.com/11211914/79682692-94eca300-8267-11ea-8cd3-a23daf3de982.png" width="250">
+<img src="https://user-images.githubusercontent.com/11211914/79682686-8c946800-8267-11ea-8d87-c03c4ca89882.png" width="250">
 
 ## iPad Preview
-<img src="https://user-images.githubusercontent.com/11211914/79673521-af019380-821d-11ea-82f5-49d75e83d7c0.png" width="500">
+<img src="https://user-images.githubusercontent.com/11211914/79682700-a766dc80-8267-11ea-906c-8633394576ea.PNG" width="500">
 
 ## Mac Preview
-<img src="https://user-images.githubusercontent.com/11211914/79673482-7eb9f500-821d-11ea-93e0-60fc32e554ee.png" width="600">
+<img src="https://user-images.githubusercontent.com/11211914/79682737-fb71c100-8267-11ea-9a2b-c73a952d2839.png" width="568">
 
 
 ## Features
