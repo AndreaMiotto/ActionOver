@@ -22,4 +22,9 @@ public struct IpadAndMacConfiguration {
 
     /// The **Arrow Edge** for the the *ActionOver* in **iPad and Mac devices**
     let arrowEdge: Edge?
+
+    public init(anchor: UnitPoint?, arrowEdge: Edge?) {
+        self.anchor = anchor
+        self.arrowEdge = arrowEdge
+    }
 }

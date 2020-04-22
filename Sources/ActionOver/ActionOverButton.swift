@@ -14,10 +14,16 @@
  - **action** executed when the button is pressed.
  */
 public struct ActionOverButton {
-    enum ActionType {
+    public enum ActionType {
         case destructive, cancel, normal
     }
     let title: String?
     let type: ActionType
     let action: (() -> Void)?
+
+    public init(title: String?, type: ActionType, action: (() -> Void)?) {
+        self.title = title
+        self.type = type
+        self.action = action
+    }
 }
