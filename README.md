@@ -61,7 +61,7 @@ If you want a starting point copy in your ContentView file the following code:
 
 ```Swift
 import SwiftUI
-import PartialSheet
+import ActionOver
 
 struct ContentView: View {
 
