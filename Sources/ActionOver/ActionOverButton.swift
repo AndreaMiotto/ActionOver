@@ -13,7 +13,7 @@
  - **type** for the button: (normal, cancel, destructive).
  - **action** executed when the button is pressed.
  */
-struct ActionOverButton {
+public struct ActionOverButton {
     enum ActionType {
         case destructive, cancel, normal
     }

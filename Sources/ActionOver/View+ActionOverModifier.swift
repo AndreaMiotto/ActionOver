@@ -18,7 +18,7 @@ extension View {
      - parameter ipadAndMacConfiguration: The configuration that helpd the menu to position itself on iPad and Mac.
      - parameter normalButtonColor: The color for the buttons with a *normal* action. The default color is *UIColor.label*
      */
-    func actionOver(
+    public func actionOver(
         presented: Binding<Bool>,
         title: String,
         message: String?,

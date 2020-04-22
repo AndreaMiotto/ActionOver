@@ -15,7 +15,7 @@ import SwiftUI
  - **Anchor Point**: where you want to attach the *ActionOver*.
  - **Arrow Edge** for the the *ActionOver*
  */
-struct IpadAndMacConfiguration {
+public struct IpadAndMacConfiguration {
 
     /// The **Anchor Point** where you want to attach the *ActionOver* in **iPad and Mac devices**
     let anchor: UnitPoint?
