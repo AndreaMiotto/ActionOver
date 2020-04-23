@@ -25,17 +25,15 @@ extension View {
         buttons: [ActionOverButton],
         ipadAndMacConfiguration: IpadAndMacConfiguration,
         normalButtonColor: UIColor = UIColor.label
-        ) -> AnyView {
-        return AnyView(
-            self.modifier(
-                ActionOver(
-                    presented: presented,
-                    title: title,
-                    message: message,
-                    buttons: buttons,
-                    ipadAndMacConfiguration: ipadAndMacConfiguration,
-                    normalButtonColor: normalButtonColor
-                )
+    ) -> some View {
+        return self.modifier(
+            ActionOver(
+                presented: presented,
+                title: title,
+                message: message,
+                buttons: buttons,
+                ipadAndMacConfiguration: ipadAndMacConfiguration,
+                normalButtonColor: normalButtonColor
             )
         )
     }
