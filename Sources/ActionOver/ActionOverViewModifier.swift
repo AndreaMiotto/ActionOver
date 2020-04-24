@@ -153,7 +153,7 @@ struct ActionOver: ViewModifier {
                     Group {
                         Divider()
                         self.popoverButtons[index]
-                            .padding(.vertical, 10)
+                            .padding(.all, 10)
                     }
                 }
             }

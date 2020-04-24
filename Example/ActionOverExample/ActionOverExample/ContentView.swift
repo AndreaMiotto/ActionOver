@@ -18,10 +18,10 @@ struct ContentView: View {
                 Text("""
                 Hi, this is the Action Over modifier.
 
-                With this modifier you will preset an Action Sheet on iPhone
+                With this modifier you will present an Action Sheet on iPhone
                 and a Popover on iPad and Mac.
 
-                You will write just once your actions, and with a single modifier
+                You will write your actions just once, and with a single modifier
                 you will dislay the proper menu according the user's device.
                 """)
                 Button(action: {
@@ -32,7 +32,7 @@ struct ContentView: View {
                     .actionOver(
                         presented: $presented,
                         title: "Settings",
-                        message: "Wich setting will you enamble?",
+                        message: "Which setting will you enable?",
                         buttons: buttons,
                         ipadAndMacConfiguration: ipadMacConfig
                 )
