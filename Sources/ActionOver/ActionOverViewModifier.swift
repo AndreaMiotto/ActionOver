@@ -149,11 +149,12 @@ struct ActionOver: ViewModifier {
                     .padding(.horizontal)
             }
 
-            ForEach((0..<self.popoverButtons.count), id: \.self) { index in
-                Group {
-                    Divider()
-                    self.popoverButtons[index]
-                        .padding(.vertical, 10)
+                ForEach((0..<self.popoverButtons.count), id: \.self) { index in
+                    Group {
+                        Divider()
+                        self.popoverButtons[index]
+                            .padding(.all, 10)
+                    }
                 }
             }
         }
