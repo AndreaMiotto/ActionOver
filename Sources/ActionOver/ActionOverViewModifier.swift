@@ -34,6 +34,9 @@ struct ActionOver: ViewModifier {
 
     /// The **Action Sheet Buttons** built from the Action Over Buttons
     private var sheetButtons: [ActionSheet.Button] {
+
+        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = normalButtonColor
+
         var actionButtons: [ActionSheet.Button] = []
 
         // for each action over button
@@ -106,16 +109,14 @@ struct ActionOver: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-
             .iPhone {
-                AnyView($0)
+                $0
                     .actionSheet(isPresented: $presented) {
                         ActionSheet(
                             title: Text(self.title),
                             message: Text(self.message ?? ""),
                             buttons: sheetButtons)
                 }
-                .modifier(ActionSheetCustom(buttonCulor: self.normalButtonColor))
         }
         .iPadAndMac {
             return ipadAndMacConfiguration.anchor != nil ?
@@ -132,22 +133,21 @@ struct ActionOver: ViewModifier {
 
     // MARK: - Private Methods
 
-    private func popContent() -> AnyView {
-        return AnyView(
-            VStack(alignment: .center, spacing: 10) {
-                Text(self.title)
-                    .font(.headline)
+    private func popContent() -> some View {
+        return VStack(alignment: .center, spacing: 10) {
+            Text(self.title)
+                .font(.headline)
+                .foregroundColor(Color(UIColor.secondaryLabel))
+                .padding(.top)
+            if self.message != nil {
+                Text(self.message ?? "")
+                    .font(.body)
                     .foregroundColor(Color(UIColor.secondaryLabel))
-                    .padding(.top)
-                if self.message != nil {
-                    Text(self.message ?? "")
-                        .font(.body)
-                        .foregroundColor(Color(UIColor.secondaryLabel))
-                        .multilineTextAlignment(.center)
-                        .lineLimit(4)
-                        .frame(minHeight: 60)
-                        .padding(.horizontal)
-                }
+                    .multilineTextAlignment(.center)
+                    .lineLimit(4)
+                    .frame(minHeight: 60)
+                    .padding(.horizontal)
+            }
 
                 ForEach((0..<self.popoverButtons.count), id: \.self) { index in
                     Group {
@@ -157,22 +157,9 @@ struct ActionOver: ViewModifier {
                     }
                 }
             }
-            .buttonStyle(PlainButtonStyle())
-            .padding(10)
-        )
+        }
+        .buttonStyle(PlainButtonStyle())
+        .padding(10)
+
     }
 }
-
-//struct ActionOver_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            Text("View")
-//                .actionOver(
-//
-//            Text("View")
-//                .loadingView(isShowing: .constant(true))
-//                .environment(\.colorScheme, .dark)
-//        }
-//    }
-//}
-

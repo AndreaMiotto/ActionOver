@@ -17,7 +17,6 @@
 		01294516244C1E70006190B0 /* View+ActionOverModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01294512244C1E70006190B0 /* View+ActionOverModifier.swift */; };
 		01294517244C1E70006190B0 /* ActionOverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01294513244C1E70006190B0 /* ActionOverButton.swift */; };
 		01294518244C1E70006190B0 /* View+IfDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01294514244C1E70006190B0 /* View+IfDeviceType.swift */; };
-		0129451A244C2303006190B0 /* ActionSheetStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01294519244C2303006190B0 /* ActionSheetStyle.swift */; };
 		0129451D244C359E006190B0 /* IpadAndMacConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129451C244C359E006190B0 /* IpadAndMacConfiguration.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		01294512244C1E70006190B0 /* View+ActionOverModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+ActionOverModifier.swift"; sourceTree = "<group>"; };
 		01294513244C1E70006190B0 /* ActionOverButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionOverButton.swift; sourceTree = "<group>"; };
 		01294514244C1E70006190B0 /* View+IfDeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+IfDeviceType.swift"; sourceTree = "<group>"; };
-		01294519244C2303006190B0 /* ActionSheetStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetStyle.swift; sourceTree = "<group>"; };
 		0129451B244C2C88006190B0 /* ActionOverExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActionOverExample.entitlements; sourceTree = "<group>"; };
 		0129451C244C359E006190B0 /* IpadAndMacConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadAndMacConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +96,6 @@
 				01294512244C1E70006190B0 /* View+ActionOverModifier.swift */,
 				01294513244C1E70006190B0 /* ActionOverButton.swift */,
 				01294514244C1E70006190B0 /* View+IfDeviceType.swift */,
-				01294519244C2303006190B0 /* ActionSheetStyle.swift */,
 			);
 			name = ActionOver;
 			path = ../../../Sources/ActionOver;
@@ -176,7 +173,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01294518244C1E70006190B0 /* View+IfDeviceType.swift in Sources */,
-				0129451A244C2303006190B0 /* ActionSheetStyle.swift in Sources */,
 				012944F8244C1CD2006190B0 /* AppDelegate.swift in Sources */,
 				012944FA244C1CD2006190B0 /* SceneDelegate.swift in Sources */,
 				012944FC244C1CD2006190B0 /* ContentView.swift in Sources */,
