@@ -28,7 +28,7 @@ A custom SwiftUI modifier to present an Action Sheet on iPhone and a Popover on 
 ## Installation
 
 #### Requirements
-- iOS 13.0+ / macOS 10.15+
+- iOS 13.0+ / macOS 10.15.4+
 - Xcode 11.2+
 - Swift 5+
 
