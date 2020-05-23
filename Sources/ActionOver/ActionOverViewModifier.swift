@@ -14,10 +14,10 @@ struct ActionOver: ViewModifier {
     @Binding var presented: Bool
 
     /// The **title** of the *Action Over*
-    let title: String
+    let title: Text
 
     /// The **message** of the *Action Over*
-    let message: String?
+    let message: Text?
 
     /// All the **buttons** that will be displayed inside the *Action Over*
     let buttons: [ActionOverButton]
@@ -48,13 +48,13 @@ struct ActionOver: ViewModifier {
                 actionButtons.append(button)
             case .normal:
                 let button: ActionSheet.Button = .default(
-                    Text(button.title ?? ""),
+                    button.title ?? Text(""),
                     action: button.action
                 )
                 actionButtons.append(button)
             case .destructive:
                 let button: ActionSheet.Button = .destructive(
-                    Text(button.title ?? ""),
+                    button.title ?? Text(""),
                     action: button.action
                 )
                 actionButtons.append(button)
@@ -82,7 +82,7 @@ struct ActionOver: ViewModifier {
                         }
                 },
                     label: {
-                        Text(button.title ?? "")
+                        (button.title ?? Text(""))
                             .foregroundColor(Color(self.normalButtonColor))
                 })
                 actionButtons.append(button)
@@ -95,7 +95,7 @@ struct ActionOver: ViewModifier {
                         }
                 },
                     label: {
-                        Text(button.title ?? "")
+                        (button.title ?? Text(""))
                             .foregroundColor(Color(UIColor.systemRed))
                 })
 
@@ -113,8 +113,8 @@ struct ActionOver: ViewModifier {
                 $0
                     .actionSheet(isPresented: $presented) {
                         ActionSheet(
-                            title: Text(self.title),
-                            message: Text(self.message ?? ""),
+                            title: self.title,
+                            message: self.message,
                             buttons: sheetButtons)
                 }
         }
@@ -135,12 +135,12 @@ struct ActionOver: ViewModifier {
 
     private func popContent() -> some View {
         return VStack(alignment: .center, spacing: 10) {
-            Text(self.title)
+            self.title
                 .font(.headline)
                 .foregroundColor(Color(UIColor.secondaryLabel))
                 .padding(.top)
             if self.message != nil {
-                Text(self.message ?? "")
+                self.message
                     .font(.body)
                     .foregroundColor(Color(UIColor.secondaryLabel))
                     .multilineTextAlignment(.center)

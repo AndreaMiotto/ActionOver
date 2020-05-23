@@ -31,8 +31,8 @@ struct ContentView: View {
                 })
                     .actionOver(
                         presented: $presented,
-                        title: "Settings",
-                        message: "Which setting will you enable?",
+                        title: Text("Settings"),
+                        message: Text("Which setting will you enable?"),
                         buttons: buttons,
                         ipadAndMacConfiguration: ipadMacConfig
                 )
@@ -50,17 +50,17 @@ struct ContentView: View {
     private var buttons: [ActionOverButton] = {
         return [
             ActionOverButton(
-                title: "Option one",
+                title: Text("Option one"),
                 type: .normal,
                 action: {}
             ),
             ActionOverButton(
-                title: "Option two",
+                title: Text("Option two"),
                 type: .normal,
                 action: {}
             ),
             ActionOverButton(
-                title: "Delete",
+                title: Text("Delete"),
                 type: .destructive,
                 action: {}
             ),
