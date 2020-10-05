@@ -20,11 +20,11 @@ extension View {
      */
     public func actionOver(
         presented: Binding<Bool>,
-        title: String,
-        message: String?,
+        title: Text,
+        message: Text?,
         buttons: [ActionOverButton],
         ipadAndMacConfiguration: IpadAndMacConfiguration,
-        normalButtonColor: UIColor = UIColor.label
+        normalButtonColor: Color = .primary
     ) -> some View {
         return self.modifier(
             ActionOver(
