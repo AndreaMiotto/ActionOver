@@ -14,10 +14,10 @@ struct ActionOver: ViewModifier {
     @Binding var presented: Bool
 
     /// The **title** of the *Action Over*
-    let title: String
+    let title: Text
 
     /// The **message** of the *Action Over*
-    let message: String?
+    let message: Text?
 
     /// All the **buttons** that will be displayed inside the *Action Over*
     let buttons: [ActionOverButton]
@@ -26,7 +26,7 @@ struct ActionOver: ViewModifier {
     let ipadAndMacConfiguration: IpadAndMacConfiguration
 
     /// The normal action button color
-    let normalButtonColor: UIColor
+    let normalButtonColor: Color
 
 
 
@@ -35,7 +35,7 @@ struct ActionOver: ViewModifier {
     /// The **Action Sheet Buttons** built from the Action Over Buttons
     private var sheetButtons: [ActionSheet.Button] {
 
-        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = normalButtonColor
+        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = UIColor(cgColor: normalButtonColor.cgColor!)
 
         var actionButtons: [ActionSheet.Button] = []
 
@@ -48,13 +48,13 @@ struct ActionOver: ViewModifier {
                 actionButtons.append(button)
             case .normal:
                 let button: ActionSheet.Button = .default(
-                    Text(button.title ?? ""),
+                    button.title ?? Text(""),
                     action: button.action
                 )
                 actionButtons.append(button)
             case .destructive:
                 let button: ActionSheet.Button = .destructive(
-                    Text(button.title ?? ""),
+                    button.title ?? Text(""),
                     action: button.action
                 )
                 actionButtons.append(button)
@@ -82,8 +82,8 @@ struct ActionOver: ViewModifier {
                         }
                 },
                     label: {
-                        Text(button.title ?? "")
-                            .foregroundColor(Color(self.normalButtonColor))
+                        (button.title ?? Text(""))
+                            .foregroundColor(self.normalButtonColor)
                 })
                 actionButtons.append(button)
             case .destructive:
@@ -95,7 +95,7 @@ struct ActionOver: ViewModifier {
                         }
                 },
                     label: {
-                        Text(button.title ?? "")
+                        (button.title ?? Text(""))
                             .foregroundColor(Color(UIColor.systemRed))
                 })
 
@@ -113,8 +113,8 @@ struct ActionOver: ViewModifier {
                 $0
                     .actionSheet(isPresented: $presented) {
                         ActionSheet(
-                            title: Text(self.title),
-                            message: Text(self.message ?? ""),
+                            title: self.title,
+                            message: self.message,
                             buttons: sheetButtons)
                 }
         }
@@ -135,12 +135,12 @@ struct ActionOver: ViewModifier {
 
     private func popContent() -> some View {
         return VStack(alignment: .center, spacing: 10) {
-            Text(self.title)
+            self.title
                 .font(.headline)
                 .foregroundColor(Color(UIColor.secondaryLabel))
                 .padding(.top)
             if self.message != nil {
-                Text(self.message ?? "")
+                (self.message ?? Text(""))
                     .font(.body)
                     .foregroundColor(Color(UIColor.secondaryLabel))
                     .multilineTextAlignment(.center)
